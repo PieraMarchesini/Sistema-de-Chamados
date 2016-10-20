@@ -17,6 +17,7 @@ import static org.junit.Assert.*;
  * @author 31581773
  */
 public class EmpresaTest {
+    Empresa emp = new Empresa(123456,"Duratex");
     
     public EmpresaTest() {
     }
