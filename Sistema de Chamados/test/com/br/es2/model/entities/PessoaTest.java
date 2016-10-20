@@ -42,13 +42,7 @@ public class PessoaTest {
      */
     @Test
     public void testGetNome() {
-        System.out.println("getNome");
-        Pessoa instance = null;
-        String expResult = "";
-        String result = instance.getNome();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Mariana", p.getNome());
     }
 
     /**
@@ -56,12 +50,13 @@ public class PessoaTest {
      */
     @Test
     public void testSetNome() {
-        System.out.println("setNome");
-        String nome = "";
-        Pessoa instance = null;
-        instance.setNome(nome);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        p.setNome("Paloma");
+        assertEquals("Paloma", p.getNome());
+    }
+    @Test 
+    public void NomeInvalidoPassa(){
+        p.setNome("Mari@ M@d@l$en@");
+        assertEquals("Mari@ M@d@l$en@", p.getNome());
     }
 
     /**
@@ -69,13 +64,7 @@ public class PessoaTest {
      */
     @Test
     public void testGetTelefone() {
-        System.out.println("getTelefone");
-        Pessoa instance = null;
-        long expResult = 0L;
-        long result = instance.getTelefone();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(30817564,p.getTelefone());
     }
 
     /**
@@ -83,12 +72,14 @@ public class PessoaTest {
      */
     @Test
     public void testSetTelefone() {
-        System.out.println("setTelefone");
-        long telefone = 0L;
-        Pessoa instance = null;
-        instance.setTelefone(telefone);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        p.setTelefone(972616068);
+        assertEquals(972616068,p.getTelefone());
+    }
+    
+    @Test
+    public void TelefoneInvalidoPassa(){
+        p.setTelefone(123);
+        assertEquals(123,p.getTelefone());
     }
     
 }
