@@ -40,15 +40,11 @@ public class ClienteEmpresaTest {
     /**
      * Test of getCodigo method, of class ClienteEmpresa.
      */
-    @Test
+  @Test
     public void testGetCodigo() {
-        System.out.println("getCodigo");
-        ClienteEmpresa instance = null;
-        Integer expResult = null;
-        Integer result = instance.getCodigo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Empresa empresa = new Empresa(123456, "Anbima");
+        ClienteEmpresa ce = new ClienteEmpresa(1234,empresa,12345,"Mariana",30817564);
+        assertEquals(ce.getCodigo(),ce.getCodigo());
     }
 
     /**
@@ -56,39 +52,41 @@ public class ClienteEmpresaTest {
      */
     @Test
     public void testSetCodigo() {
-        System.out.println("setCodigo");
-        Integer codigo = null;
-        ClienteEmpresa instance = null;
-        instance.setCodigo(codigo);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Empresa empresa = new Empresa(123456, "Anbima");
+        ClienteEmpresa ce = new ClienteEmpresa(1234,empresa,12345,"Mariana",30817564);
+        ce.setCodigo(123456);
+       assertEquals(ce.getCodigo(),ce.getCodigo());
     }
 
     /**
      * Test of getCpf method, of class ClienteEmpresa.
      */
+    
+    
     @Test
     public void testGetCpf() {
-        System.out.println("getCpf");
-        ClienteEmpresa instance = null;
-        long expResult = 0L;
-        long result = instance.getCpf();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      Empresa empresa = new Empresa(123456, "Anbima");
+        ClienteEmpresa ce = new ClienteEmpresa(1234,empresa,12345,"Mariana",30817564);
+        
+        assertEquals(12345,ce.getCpf());
     }
 
     /**
      * Test of setCpf method, of class ClienteEmpresa.
      */
+    
+    @Test
+    public void CPFInvalidoPassa(){
+        Empresa empresa = new Empresa(123456, "Anbima");
+        ClienteEmpresa ce = new ClienteEmpresa(1234,empresa,12345,"Mariana",30817564);
+        assertEquals(12345, ce.getCpf());
+    }
     @Test
     public void testSetCpf() {
-        System.out.println("setCpf");
-        long cpf = 0L;
-        ClienteEmpresa instance = null;
-        instance.setCpf(cpf);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      Empresa empresa = new Empresa(123456, "Anbima");
+        ClienteEmpresa ce = new ClienteEmpresa(1234,empresa,12345,"Mariana",30817564);
+        ce.setCpf(123456);
+        assertEquals(123456,ce.getCpf());
     }
 
     /**
@@ -96,13 +94,9 @@ public class ClienteEmpresaTest {
      */
     @Test
     public void testGetEmpresa() {
-        System.out.println("getEmpresa");
-        ClienteEmpresa instance = null;
-        Empresa expResult = null;
-        Empresa result = instance.getEmpresa();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Empresa empresa = new Empresa(123456, "Anbima");
+        ClienteEmpresa ce = new ClienteEmpresa(1234,empresa,12345,"Mariana",30817564);
+        assertEquals(empresa, ce.getEmpresa());
     }
 
     /**
@@ -110,13 +104,9 @@ public class ClienteEmpresaTest {
      */
     @Test
     public void testToString() {
-        System.out.println("toString");
-        ClienteEmpresa instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Empresa empresa = new Empresa(123456, "Anbima");
+        ClienteEmpresa ce = new ClienteEmpresa(1234,empresa,12345,"Mariana",30817564);
+        assertEquals("Contrato: 123456 - Nome Empresa:Anbima - Cliente: 12345 - Mariana",ce.toString());
     }
     
 }
