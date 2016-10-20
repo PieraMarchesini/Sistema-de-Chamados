@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * @author 31581773
  */
 public class PessoaTest {
-    
+    Pessoa p = new Pessoa("Mariana", 30817564);
     public PessoaTest() {
     }
     
