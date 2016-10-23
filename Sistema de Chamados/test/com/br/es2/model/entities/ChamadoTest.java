@@ -203,7 +203,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetPrioridade() {
-        
+        assertEquals(3,ch.getPrioridade());
     }
 
     /**
@@ -211,7 +211,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetPrioridade() {
-        
+        ch.setPrioridade(4);
+        assertEquals(4,ch.getPrioridade());
     }
 
     /**
@@ -219,7 +220,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetSistemaOperacional() {
-        
+        assertEquals("Windows",ch.getSistemaOperacional());
     }
 
     /**
@@ -227,7 +228,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetSistemaOperacional() {
-        
+        ch.setSistemaOperacional("Linux");
+        assertEquals("Linux",ch.getSistemaOperacional());
     }
 
     /**
@@ -235,7 +237,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetVersaoSO() {
-        
+        assertEquals("7",ch.getVersaoSO());
     }
 
     /**
