@@ -42,12 +42,6 @@ public class SistemaOperacionalTest {
      */
     @Test
     public void testValues() {
-        System.out.println("values");
-        SistemaOperacional[] expResult = null;
-        SistemaOperacional[] result = SistemaOperacional.values();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -55,13 +49,6 @@ public class SistemaOperacionalTest {
      */
     @Test
     public void testValueOf() {
-        System.out.println("valueOf");
-        String name = "";
-        SistemaOperacional expResult = null;
-        SistemaOperacional result = SistemaOperacional.valueOf(name);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

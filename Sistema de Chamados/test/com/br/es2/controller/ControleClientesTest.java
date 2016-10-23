@@ -45,13 +45,6 @@ public class ControleClientesTest {
      */
     @Test
     public void testGetClienteDAO() {
-        System.out.println("getClienteDAO");
-        ControleClientes instance = new ControleClientes();
-        ClienteDAO expResult = null;
-        ClienteDAO result = instance.getClienteDAO();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,11 +52,6 @@ public class ControleClientesTest {
      */
     @Test
     public void testCadastrarCliente() {
-        System.out.println("cadastrarCliente");
-        ControleClientes instance = new ControleClientes();
-        instance.cadastrarCliente();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -71,17 +59,6 @@ public class ControleClientesTest {
      */
     @Test
     public void testIncluiNovoCliente() {
-        System.out.println("incluiNovoCliente");
-        Empresa empresa = null;
-        long cpf = 0L;
-        String nome = "";
-        long telefone = 0L;
-        ControleClientes instance = new ControleClientes();
-        ClienteEmpresa expResult = null;
-        ClienteEmpresa result = instance.incluiNovoCliente(empresa, cpf, nome, telefone);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -89,11 +66,6 @@ public class ControleClientesTest {
      */
     @Test
     public void testFecharTelaCliente() {
-        System.out.println("fecharTelaCliente");
-        ControleClientes instance = new ControleClientes();
-        instance.fecharTelaCliente();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

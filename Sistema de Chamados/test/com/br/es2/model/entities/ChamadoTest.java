@@ -1,5 +1,8 @@
 package com.br.es2.model.entities;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,7 +14,7 @@ public class ChamadoTest {
     Empresa e = new Empresa(56,"AB");
     ClienteEmpresa ce = new ClienteEmpresa(123,e,5678910,"Paloma",45362712);
     Tecnico t = new Tecnico("Ana",34231256);
-    Chamado ch = new Chamado(01,"instalar software","instalação do skype",3,t,ce,"Windows","7","Cabo","privado");
+    Chamado ch = new Chamado(03,"instalar software","instalação do skype",3,t,ce,"Windows","7","Cabo","privado");
     
     public ChamadoTest() {
     }
@@ -45,7 +48,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetCodigo() {
-        assertEquals(01,ch.getCodigo());
+        assertEquals(03,ch.getCodigo());
     }
 
     /**
@@ -124,7 +127,9 @@ public class ChamadoTest {
      */
     @Test
     public void testGetData() {
-	assertEquals(data,ch.getData());
+        Calendar c = Calendar.getInstance();
+        String date = DateFormat.getDateInstance().format(c.getTime());
+	assertEquals(date,ch.getData());
     }
 
     /**
@@ -132,11 +137,10 @@ public class ChamadoTest {
      */
     @Test
     public void testSetData() {
-	Calendar c2 = Calendar.getInstance();
-	c2.set(2016, 9, 20);
-	ch.data = DateFormat.getDateInstance().format(c2.getTime());
-	ch.setData(ch.data); 
-	assertEquals("20/10/2016",ch.getData());
+       Date date = new Date();
+       String date1 = DateFormat.getDateInstance().format(date.getTime());
+	ch.setData(date1);
+	assertEquals(date1,ch.getData());
     }
 
     /**
@@ -144,7 +148,9 @@ public class ChamadoTest {
      */
     @Test
     public void testGetHora() {
-        
+        Calendar c = Calendar.getInstance();
+        String hora = DateFormat.getTimeInstance().format(c.getTime());
+        assertEquals(hora,ch.getHora());
     }
 
     /**
@@ -152,7 +158,10 @@ public class ChamadoTest {
      */
     @Test
     public void testSetHora() {
-        
+        Date date = new Date();
+        String hora = DateFormat.getTimeInstance().format(date.getTime());
+        ch.setHora(hora);
+        assertEquals(hora,ch.getHora());
     }
 
     /**
@@ -160,7 +169,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetTitulo() {
-        
+        assertEquals("instalar software",ch.getTitulo());
     }
 
     /**
@@ -168,7 +177,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetTitulo() {
-        
+        ch.setTitulo("E-mail nao conecta");
+        assertEquals("E-mail nao conecta",ch.getTitulo());
     }
 
     /**
@@ -176,7 +186,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetDescricao() {
-        
+        assertEquals("instalação do skype",ch.getDescricao());
     }
 
     /**
@@ -184,7 +194,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetDescricao() {
-        
+        ch.setDescricao("Nao consigo receber e-mail e preciso trabalhar");
+        assertEquals("Nao consigo receber e-mail e preciso trabalhar",ch.getDescricao());
     }
 
     /**

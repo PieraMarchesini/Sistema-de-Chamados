@@ -58,13 +58,6 @@ public class TecnicoDAOTest {
      */
     @Test
     public void testVoltaCashTecnico() {
-        System.out.println("voltaCashTecnico");
-        TecnicoDAO instance = new TecnicoDAO();
-        HashMap<Integer, Tecnico> expResult = null;
-        HashMap<Integer, Tecnico> result = instance.voltaCashTecnico();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,12 +65,6 @@ public class TecnicoDAOTest {
      */
     @Test
     public void testPut() {
-        System.out.println("put");
-        Tecnico tecnico = null;
-        TecnicoDAO instance = new TecnicoDAO();
-        instance.put(tecnico);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -85,14 +72,6 @@ public class TecnicoDAOTest {
      */
     @Test
     public void testGet() {
-        System.out.println("get");
-        Integer codigo = null;
-        TecnicoDAO instance = new TecnicoDAO();
-        Tecnico expResult = null;
-        Tecnico result = instance.get(codigo);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -100,11 +79,6 @@ public class TecnicoDAOTest {
      */
     @Test
     public void testPersit() {
-        System.out.println("persit");
-        TecnicoDAO instance = new TecnicoDAO();
-        instance.persit();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

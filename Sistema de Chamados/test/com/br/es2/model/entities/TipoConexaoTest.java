@@ -42,12 +42,6 @@ public class TipoConexaoTest {
      */
     @Test
     public void testValues() {
-        System.out.println("values");
-        TipoConexao[] expResult = null;
-        TipoConexao[] result = TipoConexao.values();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -55,13 +49,6 @@ public class TipoConexaoTest {
      */
     @Test
     public void testValueOf() {
-        System.out.println("valueOf");
-        String name = "";
-        TipoConexao expResult = null;
-        TipoConexao result = TipoConexao.valueOf(name);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

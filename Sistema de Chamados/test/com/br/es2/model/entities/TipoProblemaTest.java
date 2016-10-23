@@ -42,12 +42,7 @@ public class TipoProblemaTest {
      */
     @Test
     public void testValues() {
-        System.out.println("values");
-        TipoProblema[] expResult = null;
-        TipoProblema[] result = TipoProblema.values();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
     }
 
     /**
@@ -55,13 +50,7 @@ public class TipoProblemaTest {
      */
     @Test
     public void testValueOf() {
-        System.out.println("valueOf");
-        String name = "";
-        TipoProblema expResult = null;
-        TipoProblema result = TipoProblema.valueOf(name);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

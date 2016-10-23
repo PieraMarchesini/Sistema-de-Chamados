@@ -45,13 +45,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testGerarCodigo() {
-        System.out.println("gerarCodigo");
-        ChamadoDAO instance = new ChamadoDAO();
-        int expResult = 0;
-        int result = instance.gerarCodigo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,13 +52,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testGerarCodigoRegistroChamado() {
-        System.out.println("gerarCodigoRegistroChamado");
-        ChamadoDAO instance = new ChamadoDAO();
-        int expResult = 0;
-        int result = instance.gerarCodigoRegistroChamado();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -73,12 +59,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testPut() {
-        System.out.println("put");
-        Chamado chamado = null;
-        ChamadoDAO instance = new ChamadoDAO();
-        instance.put(chamado);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -86,12 +66,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testPutRegistro() {
-        System.out.println("putRegistro");
-        RegistroChamado registroChamado = null;
-        ChamadoDAO instance = new ChamadoDAO();
-        instance.putRegistro(registroChamado);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -99,14 +73,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testGet() {
-        System.out.println("get");
-        Integer codigoChamado = null;
-        ChamadoDAO instance = new ChamadoDAO();
-        Chamado expResult = null;
-        Chamado result = instance.get(codigoChamado);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -114,11 +80,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testPersit() {
-        System.out.println("persit");
-        ChamadoDAO instance = new ChamadoDAO();
-        instance.persit();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -126,13 +87,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testGetChamados() {
-        System.out.println("getChamados");
-        ChamadoDAO instance = new ChamadoDAO();
-        Collection<Chamado> expResult = null;
-        Collection<Chamado> result = instance.getChamados();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -140,13 +94,6 @@ public class ChamadoDAOTest {
      */
     @Test
     public void testGetRegistros() {
-        System.out.println("getRegistros");
-        ChamadoDAO instance = new ChamadoDAO();
-        Collection<RegistroChamado> expResult = null;
-        Collection<RegistroChamado> result = instance.getRegistros();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
