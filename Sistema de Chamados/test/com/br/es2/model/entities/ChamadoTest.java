@@ -11,10 +11,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ChamadoTest {
-    Empresa e = new Empresa(56,"AB");
+       Empresa e = new Empresa(56,"AB");
     ClienteEmpresa ce = new ClienteEmpresa(123,e,5678910,"Paloma",45362712);
     Tecnico t = new Tecnico("Ana",34231256);
-    Chamado ch = new Chamado(03,"instalar software","instalação do skype",3,t,ce,"Windows","7","Cabo","privado");
+    Chamado ch = new Chamado(03,"instalar software","instalação do skype",3,t,ce,"Windows","7","Cabo","192.168.2.13");
+    Chamado ch2 = new Chamado("banco de dados","banco de dados não conecta",1,t,ce,"Windows","7","BD1");
+    Chamado ch3 = new Chamado("problema de desempenho","melhorar desempenho da máquina",2,t,ce,"Windows","7","HD",8.9);
     
     public ChamadoTest() {
     }
@@ -245,7 +247,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetVersaoSO() {
-        
+        ch.setVersaoSO("8");
+        assertEquals("8",ch.getVersaoSO());
     }
 
     /**
@@ -253,7 +256,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetBancoDeDados() {
-        
+        assertEquals("BD1",ch2.getBancoDeDados());
     }
 
     /**
@@ -261,7 +264,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetBancoDeDados() {
-        
+        ch2.setBancoDeDados("BD2");
+        assertEquals("BD2",ch2.getBancoDeDados());
     }
 
     /**
@@ -269,7 +273,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetCausaProblema() {
-        
+        //assertEquals("",ch2.getCausaProblema());
     }
 
     /**
@@ -277,7 +281,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetCausaProblema() {
-        
+        ch2.setCausaProblema("problemas no servidor");
+        assertEquals("problemas no servidor",ch2.getCausaProblema());
     }
 
     /**
@@ -285,7 +290,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetSolucaoProblema() {
-        
+        //assertEquals("",ch2.getSolucaoProblema());
     }
 
     /**
@@ -293,7 +298,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetSolucaoProblema() {
-        
+        ch2.setSolucaoProblema("instalar novamente o servidor");
+        assertEquals("instalar novamente o servidor",ch2.getSolucaoProblema());
     }
 
     /**
@@ -301,7 +307,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetTipoConexao() {
-        
+        assertEquals("Cabo",ch.getTipoConexao());
     }
 
     /**
@@ -309,7 +315,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetTipoConexao() {
-        
+        ch.setTipoConexao("Radio");
+        assertEquals("Radio",ch.getTipoConexao());
     }
 
     /**
@@ -317,7 +324,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetEnderecoRede() {
-        
+        assertEquals("192.168.2.13",ch.getEnderecoRede());
     }
 
     /**
@@ -325,7 +332,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetEnderecoRede() {
-        
+        ch.setEnderecoRede("192.168.2.14");
+        assertEquals("192.168.2.14",ch.getEnderecoRede());
     }
 
     /**
@@ -333,7 +341,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetOperacao() {
-        
+        assertEquals("HD",ch3.getOperacao());
     }
 
     /**
@@ -341,7 +349,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetOperacao() {
-        
+        ch3.setOperacao("SSD");
+        assertEquals("SSD",ch3.getOperacao());
     }
 
     /**
@@ -349,7 +358,7 @@ public class ChamadoTest {
      */
     @Test
     public void testGetDuracaoOperacao() {
-        
+        //assertEquals(8.9,ch3.getDuracaoOperacao());
     }
 
     /**
@@ -357,7 +366,8 @@ public class ChamadoTest {
      */
     @Test
     public void testSetDuracaoOperacao() {
-        
+        //ch3.setDuracaoOperacao(10.0);
+        //assertEquals(10.0,ch3.getDuracaoOperacao());
     }
 
     /**
