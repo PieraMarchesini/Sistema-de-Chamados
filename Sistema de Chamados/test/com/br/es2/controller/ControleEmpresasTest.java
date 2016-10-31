@@ -6,6 +6,12 @@
 package com.br.es2.controller;
 
 import com.br.es2.model.entities.Empresa;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,24 +24,41 @@ import static org.junit.Assert.*;
  * @author 31581773
  */
 public class ControleEmpresasTest {
-    
+
     public ControleEmpresasTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
-    public void setUp() {
+    public void setUp() throws FileNotFoundException, IOException {
+        HashMap<Long, Empresa> cacheEmpresas = new HashMap<>();
+        cacheEmpresas.put((long)1, new Empresa((1), "CreditSuisse"));
+        String nomearq = "empresas.dat";
+        try (FileOutputStream fos = new FileOutputStream(nomearq)) {
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(cacheEmpresas);
+            
+            oos.flush();
+            fos.flush();
+            
+            oos.close();
+        }
+        ControleEmpresas controleEmpresas = new ControleEmpresas();
+
     }
-    
+
     @After
     public void tearDown() {
+        File file = new File("empresas.dat");
+        file.delete();
     }
 
     /**
@@ -79,5 +102,5 @@ public class ControleEmpresasTest {
     @Test
     public void testFecharTela() {
     }
-    
+
 }
