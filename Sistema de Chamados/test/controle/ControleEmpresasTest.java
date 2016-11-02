@@ -82,7 +82,7 @@ public class ControleEmpresasTest {
     //Inserir uma empresa duplicada
     @Test(timeout = tempoTimeOut)
     public void testInserirDuplicada() {
-        Empresa e1 = new Empresa(2, "");
+        Empresa e1 = new Empresa(1, "");
         controleEmpresas = new ControleEmpresas();
         Assert.assertEquals(2, e1.getNumeroContrato());
         Assert.assertEquals("Anbima", e1.getNomeEmpresa());

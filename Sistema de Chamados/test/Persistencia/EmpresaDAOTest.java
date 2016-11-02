@@ -83,14 +83,18 @@ public class EmpresaDAOTest {
         eDAO.put(existente);
     }
 
+    @Test(expected = Exception.class)
+    public void testInserirEmpresaCodigoNegativo(){
+        Empresa e1 = new Empresa(-1234, "Goldman Sachs");
+        eDAO.put(e1);
+    }
     
     /**
      * Test of getEmpresas method, of class EmpresaDAO.
      */
     @Test
-    public void testGetEmpresas() {
-        eDAO = new EmpresaDAO();
-        
+    public void buscaUmaEmpresaHashMap() {
+        Empresa e1 = new Empresa(2, "")
     }
 
     /**
@@ -100,5 +104,4 @@ public class EmpresaDAOTest {
     public void testVoltaEmpresa() {
         
     }
-
 }
