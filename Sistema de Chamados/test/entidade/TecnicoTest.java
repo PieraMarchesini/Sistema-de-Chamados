@@ -44,15 +44,15 @@ public class TecnicoTest {
         Assert.assertEquals("Mariana", tec.getNome());
         Assert.assertEquals(972616068, tec.getTelefone());
     }
-    
+    @Test
     public void inserirTelefoneInvalido(){
         Tecnico tec = new Tecnico("Paloma", 97261);
        Assert.assertEquals(97261, tec.getTelefone());
     }
-    
+    @Test
     public void inserirNomeCaracteres(){
        Tecnico tec = new Tecnico("P!er@", 972616068);
-       Assert.assertEquals("P!er@",tec.getTelefone());
+       Assert.assertEquals("P!er@",tec.getNome());
     }
     /**
      * Test of toString method, of class Tecnico.
