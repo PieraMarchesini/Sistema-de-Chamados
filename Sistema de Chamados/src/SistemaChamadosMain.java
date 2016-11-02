@@ -1,9 +1,9 @@
 
-import com.br.es2.controller.ControladorPrincipal;
-import com.br.es2.model.entities.Chamado;
-import com.br.es2.model.entities.ClienteEmpresa;
-import com.br.es2.model.entities.Empresa;
-import com.br.es2.model.entities.Tecnico;
+import controle.ControladorPrincipal;
+import entidade.Chamado;
+import entidade.ClienteEmpresa;
+import entidade.Empresa;
+import entidade.Tecnico;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
