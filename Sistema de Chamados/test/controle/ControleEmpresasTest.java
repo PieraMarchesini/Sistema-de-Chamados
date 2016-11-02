@@ -15,6 +15,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -25,17 +26,9 @@ import static org.junit.Assert.*;
  * @author 31581773
  */
 public class ControleEmpresasTest {
-
-    public ControleEmpresasTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
+    
+    private ControleEmpresas controleEmpresas;
+    private final int tempoTimeOut = 800;
 
     @Before
     public void setUp() throws FileNotFoundException, IOException {
@@ -52,8 +45,6 @@ public class ControleEmpresasTest {
             
             oos.close();
         }
-        ControleEmpresas controleEmpresas = new ControleEmpresas();
-
     }
 
     @After
@@ -79,8 +70,22 @@ public class ControleEmpresasTest {
     /**
      * Test of inserir method, of class ControleEmpresas.
      */
-    @Test
-    public void testInserir() {
+    //Inserir uma nova empresa
+    @Test(timeout = tempoTimeOut)
+    public void testInserirNova() {
+        Empresa e1 = new Empresa(2, "Anbima");
+        controleEmpresas = new ControleEmpresas();
+        Assert.assertEquals(2, e1.getNumeroContrato());
+        Assert.assertEquals("Anbima", e1.getNomeEmpresa());
+    }
+    
+    //Inserir uma empresa duplicada
+    @Test(timeout = tempoTimeOut)
+    public void testInserirDuplicada() {
+        Empresa e1 = new Empresa(2, "");
+        controleEmpresas = new ControleEmpresas();
+        Assert.assertEquals(2, e1.getNumeroContrato());
+        Assert.assertEquals("Anbima", e1.getNomeEmpresa());
     }
 
     /**
