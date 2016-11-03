@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entidade;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,110 +8,45 @@ import static org.junit.Assert.*;
  * @author 31581773
  */
 public class RegistroChamadoTest {
+  
+    Empresa e = new Empresa(87,"Magna Sistemas");
+    Pessoa p = new Pessoa("Ana",45362712);
+    ClienteEmpresa ce = new ClienteEmpresa(123,e,5678910,p.getNome(),p.getTelefone());
+    Tecnico t = new Tecnico("Paloma",30224761);
+    Chamado ch = new Chamado(ce.getCodigo(),"Internet não funciona","Não consigo navegar na internet",2,t,ce,"Windows","7","Cabo","192.168.2.13");
+    RegistroChamado rc;
     
-    public RegistroChamadoTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
+    public RegistroChamadoTest(){
+        
     }
     
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getCodigo method, of class RegistroChamado.
-     */
     @Test
-    public void testGetCodigo() {
-       
-    }
+    public void criarRegistroChamadoTest(){
+        rc = new RegistroChamado("Software instalado",ch,t);
+        
+        assertEquals("Software instalado",rc.getAssunto());
+        assertEquals(ch,rc.getChamado());
+        assertEquals(t,rc.getTecnico());
+    } 
 
-    /**
-     * Test of setCodigo method, of class RegistroChamado.
-     */
     @Test
-    public void testSetCodigo() {
-    }
-
-    /**
-     * Test of setChamado method, of class RegistroChamado.
-     */
-    @Test
-    public void testSetChamado() {
-    
-    }
-
-    /**
-     * Test of getChamado method, of class RegistroChamado.
-     */
-    @Test
-    public void testGetChamado() {
-    }
-
-    /**
-     * Test of getHora method, of class RegistroChamado.
-     */
-    @Test
-    public void testGetHora() {
-    }
-
-    /**
-     * Test of setHora method, of class RegistroChamado.
-     */
-    @Test
-    public void testSetHora() {
-    }
-
-    /**
-     * Test of getData method, of class RegistroChamado.
-     */
-    @Test
-    public void testGetData() {
-    }
-
-    /**
-     * Test of setData method, of class RegistroChamado.
-     */
-    @Test
-    public void testSetData() {
-    }
-
-    /**
-     * Test of getAssunto method, of class RegistroChamado.
-     */
-    @Test
-    public void testGetAssunto() {
-    }
-
-    /**
-     * Test of setAssunto method, of class RegistroChamado.
-     */
-    @Test
-    public void testSetAssunto() {
-    }
-
-    /**
-     * Test of getTecnico method, of class RegistroChamado.
-     */
-    @Test
-    public void testGetTecnico() {
-    }
-
-    /**
-     * Test of setTecnico method, of class RegistroChamado.
-     */
-    @Test
-    public void testSetTecnico() {
+    public void editarRegistroChamadoTest(){
+        Tecnico t2 = new Tecnico("Maria",67832672);
+        Chamado ch2 = new Chamado("banco de dados","banco de dados não conecta",1,t2,ce,"Windows","7","BD1");
+        rc = new RegistroChamado("Software instalado",ch,t);
+        
+        rc.setAssunto("Problema de conexão resolvido");
+        rc.setChamado(ch2);
+        rc.setTecnico(t2);
+        
+        assertEquals("Problema de conexão resolvido",rc.getAssunto());
+        assertEquals(ch2,rc.getChamado());
+        assertEquals(t2,rc.getTecnico());
     }
     
+    @Test
+    public void assuntoInvalidoTest(){
+        rc = new RegistroChamado(" ",ch,t);
+        assertEquals(" ", rc.getAssunto());
+    }
 }
